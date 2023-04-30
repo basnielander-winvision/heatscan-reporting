@@ -42,10 +42,10 @@
             // GenerateReport
             // 
             GenerateReport.Dock = DockStyle.Fill;
-            GenerateReport.Location = new Point(1182, 640);
-            GenerateReport.Margin = new Padding(30);
+            GenerateReport.Location = new Point(1675, 637);
+            GenerateReport.Margin = new Padding(0, 0, 0, 0);
             GenerateReport.Name = "GenerateReport";
-            GenerateReport.Size = new Size(223, 70);
+            GenerateReport.Size = new Size(250, 75);
             GenerateReport.TabIndex = 0;
             GenerateReport.Text = "Rapport maken";
             GenerateReport.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             // frontpageFilePath
             // 
             frontpageFilePath.AutoSize = true;
-            frontpageFilePath.Location = new Point(579, 0);
+            frontpageFilePath.Location = new Point(273, 20);
             frontpageFilePath.Name = "frontpageFilePath";
             frontpageFilePath.Size = new Size(314, 32);
             frontpageFilePath.TabIndex = 1;
@@ -74,7 +74,7 @@
             // heatscanReportFilePath
             // 
             heatscanReportFilePath.AutoSize = true;
-            heatscanReportFilePath.Location = new Point(579, 305);
+            heatscanReportFilePath.Location = new Point(273, 95);
             heatscanReportFilePath.Name = "heatscanReportFilePath";
             heatscanReportFilePath.Size = new Size(291, 32);
             heatscanReportFilePath.TabIndex = 2;
@@ -82,9 +82,9 @@
             // 
             // selectFrontPage
             // 
-            selectFrontPage.Location = new Point(3, 3);
+            selectFrontPage.Location = new Point(23, 23);
             selectFrontPage.Name = "selectFrontPage";
-            selectFrontPage.Size = new Size(332, 46);
+            selectFrontPage.Size = new Size(244, 46);
             selectFrontPage.TabIndex = 3;
             selectFrontPage.Text = "Selecteer voorblad";
             selectFrontPage.UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@
             // 
             // selectHeatscanReport
             // 
-            selectHeatscanReport.Location = new Point(3, 308);
+            selectHeatscanReport.Location = new Point(23, 98);
             selectHeatscanReport.Name = "selectHeatscanReport";
-            selectHeatscanReport.Size = new Size(332, 46);
+            selectHeatscanReport.Size = new Size(244, 46);
             selectHeatscanReport.TabIndex = 4;
             selectHeatscanReport.Text = "Selecteer FLIR rapportage";
             selectHeatscanReport.UseVisualStyleBackColor = true;
@@ -102,30 +102,35 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 282F));
-            tableLayoutPanel1.Controls.Add(selectHeatscanReport, 0, 1);
-            tableLayoutPanel1.Controls.Add(heatscanReportFilePath, 1, 1);
-            tableLayoutPanel1.Controls.Add(selectFrontPage, 0, 0);
-            tableLayoutPanel1.Controls.Add(frontpageFilePath, 1, 0);
-            tableLayoutPanel1.Controls.Add(GenerateReport, 2, 2);
+            tableLayoutPanel1.ColumnCount = 5;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Controls.Add(selectHeatscanReport, 1, 2);
+            tableLayoutPanel1.Controls.Add(heatscanReportFilePath, 2, 2);
+            tableLayoutPanel1.Controls.Add(selectFrontPage, 1, 1);
+            tableLayoutPanel1.Controls.Add(frontpageFilePath, 2, 1);
+            tableLayoutPanel1.Controls.Add(GenerateReport, 3, 4);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 129F));
-            tableLayoutPanel1.Size = new Size(1435, 740);
+            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(1945, 732);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1435, 740);
+            ClientSize = new Size(1945, 732);
             Controls.Add(tableLayoutPanel1);
             Name = "MainForm";
             Text = "Warmtescan rapportage";

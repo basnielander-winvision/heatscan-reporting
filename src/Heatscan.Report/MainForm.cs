@@ -10,6 +10,7 @@ namespace Heatscan.Report
     {
         private readonly string locationOfLibreOfficeSoffice =
             @"C:\Tools\LibreOfficePortable\App\libreoffice\program\soffice.exe";
+        // @"C:\Projects\Personal\heatscan-reporting\libre-office-portable\program\soffice.exe";
 
         public MainForm()
         {
@@ -50,8 +51,12 @@ namespace Heatscan.Report
 
         private void selectFrontPage_Click(object sender, EventArgs e)
         {
-            this.openReportFrontPage.ShowDialog();
+            var dialogResult = this.openReportFrontPage.ShowDialog();
 
+            if (dialogResult == DialogResult.OK)
+            {
+                this.frontpageFilePath.Text = this.openReportFrontPage.FileName;
+            }
             //if (!string.IsNullOrWhiteSpace(this.openReportFrontPage.FileName))
             //{
             //    var docx = WordprocessingDocument.Open(this.openReportFrontPage.FileName, true);
@@ -67,7 +72,12 @@ namespace Heatscan.Report
 
         private void selectHeatscanReport_Click(object sender, EventArgs e)
         {
-            this.openHeatscanReport.ShowDialog();
+            var dialogResult = this.openHeatscanReport.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                this.heatscanReportFilePath.Text = this.openHeatscanReport.FileName;
+            }
         }
     }
 }
