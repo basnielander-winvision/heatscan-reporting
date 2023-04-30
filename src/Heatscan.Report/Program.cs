@@ -1,9 +1,3 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Program.cs" company="Winvision bv">
-//   Copyright (c) Winvision bv. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
 namespace Heatscan.Report
 {
     internal static class Program

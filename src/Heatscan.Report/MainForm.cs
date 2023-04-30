@@ -1,9 +1,3 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainForm.cs" company="Winvision bv">
-//   Copyright (c) Winvision bv. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
 using DocXToPdfConverter;
 
 using PdfSharp;
@@ -57,6 +51,18 @@ namespace Heatscan.Report
         private void selectFrontPage_Click(object sender, EventArgs e)
         {
             this.openReportFrontPage.ShowDialog();
+
+            //if (!string.IsNullOrWhiteSpace(this.openReportFrontPage.FileName))
+            //{
+            //    var docx = WordprocessingDocument.Open(this.openReportFrontPage.FileName, true);
+            //    var document = docx.MainDocumentPart?.Document;
+            //    var body = document.Body;
+            //    var para = body.AppendChild(new Paragraph());
+            //    var run = para.AppendChild(new Run());
+
+            //    run.AppendChild(new Text("Hello WORLD!!!!"));
+            //    docx.Clone(@"c:\temp\hello world.docx");
+            //}
         }
 
         private void selectHeatscanReport_Click(object sender, EventArgs e)
