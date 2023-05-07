@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 using DocXToPdfConverter;
 
 using PdfSharp;
@@ -44,7 +46,22 @@ namespace Heatscan.Report
                 }
             }
 
-            finalReportDocument.Save(@"c:\temp\report_output.pdf");
+            if (string.IsNullOrWhiteSpace(this.openHeatscanReport.FileName))
+            {
+                finalReportDocument.Save(@"c:\temp\report_output.pdf");
+            }
+            else
+            {
+                finalReportDocument.Save(this.openHeatscanReport.FileName);
+
+                var startInfo = new ProcessStartInfo()
+                {
+                    FileName = this.openHeatscanReport.FileName,
+                    LoadUserProfile = true,
+                    UseShellExecute = true
+                };
+                Process.Start(startInfo);
+            }
 
             this.GenerateReport.Enabled = true;
         }
@@ -77,6 +94,16 @@ namespace Heatscan.Report
             if (dialogResult == DialogResult.OK)
             {
                 this.heatscanReportFilePath.Text = this.openHeatscanReport.FileName;
+            }
+        }
+
+        private void SaveReportAs_Click(object sender, EventArgs e)
+        {
+            var dialogResult = this.saveOutputAs.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                this.outputFilePath.Text = this.saveOutputAs.FileName;
             }
         }
     }
