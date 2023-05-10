@@ -37,6 +37,7 @@
             selectHeatscanReport = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             outputFilePath = new Label();
+            label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,23 +70,25 @@
             // 
             frontpageFilePath.AutoSize = true;
             frontpageFilePath.Dock = DockStyle.Fill;
-            frontpageFilePath.Location = new Point(273, 30);
+            frontpageFilePath.Location = new Point(398, 30);
             frontpageFilePath.Margin = new Padding(3, 10, 3, 10);
             frontpageFilePath.Name = "frontpageFilePath";
-            frontpageFilePath.Size = new Size(1399, 55);
+            frontpageFilePath.Size = new Size(1274, 55);
             frontpageFilePath.TabIndex = 1;
             frontpageFilePath.Text = "Rapportage voorblad (.docx)";
+            frontpageFilePath.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // heatscanReportFilePath
             // 
             heatscanReportFilePath.AutoSize = true;
             heatscanReportFilePath.Dock = DockStyle.Fill;
-            heatscanReportFilePath.Location = new Point(273, 105);
+            heatscanReportFilePath.Location = new Point(398, 105);
             heatscanReportFilePath.Margin = new Padding(3, 10, 3, 10);
             heatscanReportFilePath.Name = "heatscanReportFilePath";
-            heatscanReportFilePath.Size = new Size(1399, 55);
+            heatscanReportFilePath.Size = new Size(1274, 55);
             heatscanReportFilePath.TabIndex = 2;
             heatscanReportFilePath.Text = "Warmtescan rapport (.pdf)";
+            heatscanReportFilePath.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // selectFrontPage
             // 
@@ -93,7 +96,7 @@
             selectFrontPage.Location = new Point(23, 30);
             selectFrontPage.Margin = new Padding(3, 10, 3, 10);
             selectFrontPage.Name = "selectFrontPage";
-            selectFrontPage.Size = new Size(244, 55);
+            selectFrontPage.Size = new Size(369, 55);
             selectFrontPage.TabIndex = 3;
             selectFrontPage.Text = "Selecteer voorblad";
             selectFrontPage.UseVisualStyleBackColor = true;
@@ -101,11 +104,12 @@
             // 
             // selectHeatscanReport
             // 
+            selectHeatscanReport.DialogResult = DialogResult.Cancel;
             selectHeatscanReport.Dock = DockStyle.Fill;
             selectHeatscanReport.Location = new Point(23, 105);
             selectHeatscanReport.Margin = new Padding(3, 10, 3, 10);
             selectHeatscanReport.Name = "selectHeatscanReport";
-            selectHeatscanReport.Size = new Size(244, 55);
+            selectHeatscanReport.Size = new Size(369, 55);
             selectHeatscanReport.TabIndex = 4;
             selectHeatscanReport.Text = "Selecteer FLIR rapportage";
             selectHeatscanReport.UseVisualStyleBackColor = true;
@@ -115,7 +119,7 @@
             // 
             tableLayoutPanel1.ColumnCount = 5;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 375F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
@@ -125,6 +129,7 @@
             tableLayoutPanel1.Controls.Add(frontpageFilePath, 2, 1);
             tableLayoutPanel1.Controls.Add(GenerateReport, 3, 5);
             tableLayoutPanel1.Controls.Add(outputFilePath, 2, 3);
+            tableLayoutPanel1.Controls.Add(label1, 1, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -143,12 +148,25 @@
             // 
             outputFilePath.AutoSize = true;
             outputFilePath.Dock = DockStyle.Fill;
-            outputFilePath.Location = new Point(273, 180);
+            outputFilePath.Location = new Point(398, 180);
             outputFilePath.Margin = new Padding(3, 10, 3, 10);
             outputFilePath.Name = "outputFilePath";
-            outputFilePath.Size = new Size(1399, 55);
+            outputFilePath.Size = new Size(1274, 55);
             outputFilePath.TabIndex = 6;
             outputFilePath.Text = "Resultaat (voorblad en FLIR rapportage samengevoegd) (.pdf)";
+            outputFilePath.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Location = new Point(23, 180);
+            label1.Margin = new Padding(3, 10, 3, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(369, 55);
+            label1.TabIndex = 7;
+            label1.Text = "Resultaat";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -174,5 +192,6 @@
         private Button selectHeatscanReport;
         private TableLayoutPanel tableLayoutPanel1;
         private Label outputFilePath;
+        private Label label1;
     }
 }
