@@ -25,9 +25,9 @@ namespace Heatscan.Report
 
             var reportFrontPageFilePath = this.openReportFrontPage.FileName;
 
-            var test = new ReportGenerator(this.locationOfLibreOfficeSoffice);
+            var pdfGenerator = new ReportGenerator(this.locationOfLibreOfficeSoffice);
             var tempFrontPagePdf = $"{Path.GetTempFileName()}.pdf";
-            test.Convert(reportFrontPageFilePath, tempFrontPagePdf);
+            pdfGenerator.Convert(reportFrontPageFilePath, tempFrontPagePdf);
 
             var finalReportDocument = new PdfDocument();
 
@@ -52,18 +52,31 @@ namespace Heatscan.Report
             }
             else
             {
-                finalReportDocument.Save(this.openHeatscanReport.FileName);
+                finalReportDocument.Save(this.outputFilePath.Text);
 
+                // Open report in pdf reader (if available)
                 var startInfo = new ProcessStartInfo()
                 {
-                    FileName = this.openHeatscanReport.FileName,
+                    FileName = this.outputFilePath.Text,
                     LoadUserProfile = true,
                     UseShellExecute = true
                 };
                 Process.Start(startInfo);
+
+                // open file explorer with the folder containing the report
+                Process.Start("explorer.exe", new FileInfo(this.outputFilePath.Text).DirectoryName);
             }
 
             this.GenerateReport.Enabled = true;
+
+            try
+            {
+                File.Delete(tempFrontPagePdf);
+            }
+            catch
+            {
+                // do nothing
+            }
         }
 
         private void selectFrontPage_Click(object sender, EventArgs e)
@@ -94,16 +107,11 @@ namespace Heatscan.Report
             if (dialogResult == DialogResult.OK)
             {
                 this.heatscanReportFilePath.Text = this.openHeatscanReport.FileName;
-            }
-        }
 
-        private void SaveReportAs_Click(object sender, EventArgs e)
-        {
-            var dialogResult = this.saveOutputAs.ShowDialog();
-
-            if (dialogResult == DialogResult.OK)
-            {
-                this.outputFilePath.Text = this.saveOutputAs.FileName;
+                var heatscanReportFileInfo = new FileInfo(this.openHeatscanReport.FileName);
+                this.outputFilePath.Text = Path.Combine(
+                    heatscanReportFileInfo.DirectoryName,
+                    $"Rapport {heatscanReportFileInfo.Name} ");
             }
         }
     }

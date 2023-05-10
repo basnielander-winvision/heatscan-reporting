@@ -36,9 +36,7 @@
             selectFrontPage = new Button();
             selectHeatscanReport = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            SaveReportAs = new Button();
             outputFilePath = new Label();
-            saveOutputAs = new SaveFileDialog();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -126,7 +124,6 @@
             tableLayoutPanel1.Controls.Add(selectFrontPage, 1, 1);
             tableLayoutPanel1.Controls.Add(frontpageFilePath, 2, 1);
             tableLayoutPanel1.Controls.Add(GenerateReport, 3, 5);
-            tableLayoutPanel1.Controls.Add(SaveReportAs, 1, 3);
             tableLayoutPanel1.Controls.Add(outputFilePath, 2, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
@@ -142,18 +139,6 @@
             tableLayoutPanel1.Size = new Size(1945, 732);
             tableLayoutPanel1.TabIndex = 5;
             // 
-            // SaveReportAs
-            // 
-            SaveReportAs.Dock = DockStyle.Fill;
-            SaveReportAs.Location = new Point(23, 180);
-            SaveReportAs.Margin = new Padding(3, 10, 3, 10);
-            SaveReportAs.Name = "SaveReportAs";
-            SaveReportAs.Size = new Size(244, 55);
-            SaveReportAs.TabIndex = 5;
-            SaveReportAs.Text = "Opslaan als";
-            SaveReportAs.UseVisualStyleBackColor = true;
-            SaveReportAs.Click += SaveReportAs_Click;
-            // 
             // outputFilePath
             // 
             outputFilePath.AutoSize = true;
@@ -164,10 +149,6 @@
             outputFilePath.Size = new Size(1399, 55);
             outputFilePath.TabIndex = 6;
             outputFilePath.Text = "Resultaat (voorblad en FLIR rapportage samengevoegd) (.pdf)";
-            // 
-            // saveOutputAs
-            // 
-            saveOutputAs.Filter = "Pdf|*.pdf";
             // 
             // MainForm
             // 
@@ -192,8 +173,6 @@
         private Button selectFrontPage;
         private Button selectHeatscanReport;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button SaveReportAs;
         private Label outputFilePath;
-        private SaveFileDialog saveOutputAs;
     }
 }
