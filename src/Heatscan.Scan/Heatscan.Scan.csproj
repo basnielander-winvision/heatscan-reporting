@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4017AA25-B63A-40CD-9998-3705779AB59F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Heatscan.Scan</RootNamespace>
+    <AssemblyName>Heatscan.Scan</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abt.Controls.SciChart.Wpf">
+      <HintPath>.\Abt.Controls.SciChart.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+	  <Reference Include="DocumentFormat.OpenXml, Version=2.20.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+		  <HintPath>packages\DocumentFormat.OpenXml.2.20.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+	  </Reference>
+    <Reference Include="FLIR Report Studio">
+      <HintPath>.\FLIR Report Studio.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.DocXEngine, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Atlas.DocXEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.DocXEngine.ProxyObjects, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Atlas.DocXEngine.ProxyObjects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.Image, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Atlas.Image.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.Localization, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Atlas.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.Wpf, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Atlas.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.Wpf.UI, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Atlas.Wpf.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Atlas.Wpf.UI.Editor, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Atlas.Wpf.UI.Editor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Cronos.Common">
+      <HintPath>.\Flir.Cronos.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Cronos.Export">
+      <HintPath>.\Flir.Cronos.Export.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Cronos.Filter, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Cronos.Filter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Cronos.Filter.Adapter, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Cronos.Filter.Adapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Cronos.Panorama, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Cronos.Panorama.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.FormatPlugin.IRSDK, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.FormatPlugin.IRSDK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.LicenseCheck, Version=6.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.LicenseCheck.exe</HintPath>
+    </Reference>
+    <Reference Include="Flir.LicenseManager, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.LicenseManager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Login, Version=2.0.0.0, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Login.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Reporting.Common, Version=2.0.14266.1000, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Flir.Reporting.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flir.Reporting.Common.UI">
+      <HintPath>.\Flir.Reporting.Common.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jint, Version=2.9.1.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Jint.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenXmlPowerTools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=caa391fd8e07c76b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\OpenXmlPowerTools.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=6.0.0.4040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Spire.Doc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.6.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Spire.License.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.9.206.4040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Spire.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "C:\Program Files\FLIR Systems\FLIR Report Studio\bin\*.*" "$(TargetDir)" /S /C /Q /Y
+echo DONE
+
+exit 0</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy "C:\Temp\FLIR.jpg" "C:\Temp\Scantest\FLIR.jpg" /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
