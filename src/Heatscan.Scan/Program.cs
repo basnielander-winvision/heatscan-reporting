@@ -32,30 +32,35 @@ namespace Heatscan.Scan
                 {
                     using (var file = new ThermalImageFile(imageFile.FullName))
                     {
-                        file.Changed += (fileChange, args1) =>
-                        {
-                            Console.WriteLine("\tFile changed");
-                            Console.WriteLine(fileChange);
-                        };
-                        Console.WriteLine("=====================");
-                        Console.WriteLine(file.FileName);
-                        Console.WriteLine(file.MaxSignalValue);
-                        Console.WriteLine(file.MinSignalValue);
-                        Console.WriteLine(file.Scale.Range.Maximum);
-                        Console.WriteLine(file.Scale.Range.Minimum);
-                        file.Scale.ScaleImageChanged += (scaleChange, args2) =>
-                        {
-                            Console.WriteLine("\tScale changed");
-                            Console.WriteLine(scaleChange);
-                        };
-                        using (var scale = file.Scale)
-                        {
-                            scale.Range = new Range<double>(-13, 5);
-                        }
+                        //file.Changed += (fileChange, args1) =>
+                        //{
+                        //    Console.WriteLine("\tFile changed");
+                        //    Console.WriteLine(fileChange);
+                        //};
+                        var fileInfo = new FileInfo(file.FileName);
+                        Console.Write(fileInfo.Name);
+                        Console.Write(";");
+                        Console.Write(file.MaxSignalValue);
+                        Console.Write(";");
+                        Console.Write(file.MinSignalValue);
+                        Console.Write(";");
+                        Console.Write(file.Scale.Range.Maximum);
+                        Console.Write(";");
+                        Console.Write(file.Scale.Range.Minimum);
+                        Console.Write(";");
+                        //file.Scale.ScaleImageChanged += (scaleChange, args2) =>
+                        //{
+                        //    Console.WriteLine("\tScale changed");
+                        //    Console.WriteLine(scaleChange);
+                        //};
+                        //using (var scale = file.Scale)
+                        //{
+                        //    scale.Range = new Range<double>(-13, 5);
+                        //}
 
-                        Console.WriteLine("=====================");
+                        Console.WriteLine();
 
-                        file.Save();
+                        // file.Save();
                         file.Close();
                     }
                 }
@@ -65,6 +70,9 @@ namespace Heatscan.Scan
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(exception);
             }
+
+            Console.WriteLine("Ready!");
+            Console.Read();
         }
     }
 }

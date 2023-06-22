@@ -37,9 +37,9 @@
       <HintPath>.\Abt.Controls.SciChart.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-	  <Reference Include="DocumentFormat.OpenXml, Version=2.20.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
-		  <HintPath>packages\DocumentFormat.OpenXml.2.20.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
-	  </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.20.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.20.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="FLIR Report Studio">
       <HintPath>.\FLIR Report Studio.exe</HintPath>
       <Private>True</Private>
