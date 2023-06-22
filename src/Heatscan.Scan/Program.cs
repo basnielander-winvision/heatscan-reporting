@@ -28,6 +28,9 @@ namespace Heatscan.Scan
 
                 var scanImageFiles = scanFolder.GetFiles("*.jpg");
 
+                var min = double.MaxValue;
+                var max = double.MinValue;
+
                 foreach (var imageFile in scanImageFiles)
                 {
                     using (var file = new ThermalImageFile(imageFile.FullName))
@@ -40,14 +43,22 @@ namespace Heatscan.Scan
                         var fileInfo = new FileInfo(file.FileName);
                         Console.Write(fileInfo.Name);
                         Console.Write(";");
-                        Console.Write(file.MaxSignalValue);
-                        Console.Write(";");
-                        Console.Write(file.MinSignalValue);
-                        Console.Write(";");
                         Console.Write(file.Scale.Range.Maximum);
                         Console.Write(";");
                         Console.Write(file.Scale.Range.Minimum);
                         Console.Write(";");
+
+                        if (file.Scale.Range.Maximum > max)
+                        {
+                            max = file.Scale.Range.Maximum;
+                        }
+
+                        if (file.Scale.Range.Minimum < min
+                            && file.Scale.Range.Minimum > -20)
+                        {
+                            min = file.Scale.Range.Minimum;
+                        }
+
                         //file.Scale.ScaleImageChanged += (scaleChange, args2) =>
                         //{
                         //    Console.WriteLine("\tScale changed");
@@ -64,6 +75,11 @@ namespace Heatscan.Scan
                         file.Close();
                     }
                 }
+
+                Console.WriteLine();
+                Console.WriteLine($"Max. value: {max}");
+                Console.WriteLine($"Min. value: {min}");
+                Console.WriteLine();
             }
             catch (Exception exception)
             {
